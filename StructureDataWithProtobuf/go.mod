@@ -1,4 +1,4 @@
-module github.com/mdbdba/proglog
+module github.com/mdbdba/proglog/StructureDataWithProtobuf
 
 go 1.13
 
