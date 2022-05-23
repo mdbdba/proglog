@@ -2,8 +2,8 @@ package log
 
 import (
 	"fmt"
-	api "github.com/mdbdba/proglog/StructureDataWithProtobuf/api/v1"
-	"google.golang.org/protobuf/proto"
+	"github.com/golang/protobuf/proto"
+	api "github.com/mdbdba/proglog/api/v1"
 	"os"
 	"path"
 )

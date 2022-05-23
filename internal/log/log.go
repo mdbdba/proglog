@@ -1,7 +1,7 @@
 package log
 
 import (
-	"fmt"
+	api "github.com/mdbdba/proglog/api/v1"
 	"io"
 	"io/ioutil"
 	"os"
@@ -10,8 +10,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-
-	api "github.com/mdbdba/proglog/StructureDataWithProtobuf/api/v1"
 )
 
 type Log struct {
@@ -97,7 +95,7 @@ func (l *Log) Read(off uint64) (*api.Record, error) {
 		}
 	}
 	if s == nil || s.nextOffset <= off {
-		return nil, fmt.Errorf("offset out of range: %d", off)
+		return nil, api.ErrOffsetOutOfRange{Offset: off}
 	}
 	return s.Read(off)
 }
